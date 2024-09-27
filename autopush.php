@@ -108,7 +108,7 @@ class AutoPush
     }
     
     /**
-     * Get the branch that the file 
+     * Get the branch that the user is in
      * 
      */
     private function getBranch(){
