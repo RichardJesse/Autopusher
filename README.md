@@ -58,6 +58,11 @@ working directory you can do use this command to ensure that
 ```bash
   git rm --cached autopush.php
 ```
+     or
+You could just create a .gitignore file and add 
+
+autopush.php
+
 
 
 
