@@ -108,7 +108,7 @@ class AutoPush
     }
     
     /**
-     * 
+     * Get the 
      * 
      */
     private function getBranch(){
