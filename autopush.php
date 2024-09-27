@@ -88,13 +88,14 @@ class AutoPush
     public function push()
     {
         $changes = $this->getChanges();
+        $branch = $this->getBranch();
         $message = $this->generateCommitMessage($changes);
 
         $escapedMessage = escapeshellarg($message);
 
         $this->log(shell_exec("git add *"));
         $this->log(shell_exec("git commit -m '$escapedMessage'")); 
-        $this->log(shell_exec("git push origin main"));
+        $this->log(shell_exec("git push origin '$branch'"));
         return $this;
     }
 
@@ -104,6 +105,14 @@ class AutoPush
     private function getChanges()
     {
         return shell_exec("git diff --staged");
+    }
+    
+    /**
+     * 
+     * 
+     */
+    private function getBranch(){
+        return shell_exec('git branch --show-current');
     }
 
 
