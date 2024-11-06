@@ -124,12 +124,13 @@ class AutoPush
     /**
      * Use Gemini to generate a meaningful commit message based on changes.
      *
+     * 
      * @param string $changes The code changes to analyze.
      * @return string The generated commit message (or empty string on error).
      */
     private function generateCommitMessage($changes)
     {
-        $apiEndpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCGXPvFjKJ3sX4ryy92-NvfFKK5qQ8Rmd4';
+        $apiEndpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDw7MZCANOn3F8mrY1Kep2D49LPwHeZBNA';
 
         $fileChanges = shell_exec("git status --short");
 
