@@ -231,7 +231,7 @@ class AutoPush
      */
     private function log($message)
     {
-      $signature = $this->style("Autopush", Selg)
+      $signature = $this->style("Autopush", self::f)
 
         echo "AutoPush: $message \n\n";
         return $this;
