@@ -210,6 +210,9 @@ class AutoPush
         return $this;
     }
 
+    /**
+     * ascii colors
+     */
     const RESET = "\033[0m";
     const BOLD = "\033[1m";
     const UNDERLINE = "\033[4m";
@@ -223,12 +226,18 @@ class AutoPush
     const BG_YELLOW = "\033[43m";
     const BG_BLUE = "\033[44m";
 
-
+   
     function style($text, $color = '', $bg = '', $format = '') {
         return $format . $color . $bg . $text . self::RESET;
     }
-
-    public function spinner($message, $duration = 5) {
+    /**
+     * 
+     *  @param {*} $message - The message that will be shown as the spinner is running
+     *  @param {*} $duration - The duration for which the spinner should go for
+     * 
+     */
+    public function spinner($message, $duration = null) {
+        $duration = $duration ?? $this->interval;
         
         $spinnerChars = ['|', '/', '-', '\\'];
         $spinnerCount = count($spinnerChars);
