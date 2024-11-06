@@ -3,6 +3,37 @@
 
 class AutoPush
 {
+    const RESET = "\033[0m";
+    const BOLD = "\033[1m";
+    const UNDERLINE = "\033[4m";
+    const FG_RED = "\033[31m";
+    const FG_GREEN = "\033[32m";
+    const FG_YELLOW = "\033[33m";
+    const FG_BLUE = "\033[34m";
+    const FG_CYAN = "\033[36m";
+    const BG_RED = "\033[41m";
+    const BG_GREEN = "\033[42m";
+    const BG_YELLOW = "\033[43m";
+    const BG_BLUE = "\033[44m";
+
+
+    function style($text, $color = '', $bg = '', $format = '') {
+        return $format . $color . $bg . $text . self::RESET;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Directory for which the autopush should 
      * look for changes in the files in it
@@ -33,7 +64,7 @@ class AutoPush
      */
     public function listen()
     {
-        $this->log("Listening for changes in directory: {$this->directory}");
+        $this->log($this->style("Listening for changes in directory: {$this->directory}", self::BOLD));
         while (true) {
             sleep($this->interval);
             if (!$this->onChange()) continue;
@@ -171,7 +202,7 @@ class AutoPush
         return $result["candidates"][0]["content"]["parts"][0]["text"];
     }
 
-    /**
+    /** 
      * Detects the purposed based on the 
      * types of file changes that
      * occured     * 
