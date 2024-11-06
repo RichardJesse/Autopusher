@@ -200,11 +200,10 @@ class AutoPush
 
     /**
      * log something to the console
-     * 
      */
     private function log($message)
     {
-      $signature = $this->style("Autopush", self::FG_CYAN);
+       $signature = $this->style("Autopush🚀", self::FG_CYAN);
 
         echo "$signature: $message \n\n";
         return $this;
