@@ -56,12 +56,14 @@ class AutoPush
         if ($this->previous == $current) return false;
 
         $this->previous = $current;
+        $this->log($this->spinner("listening"));
         return true;
     }
 
     /**
      * Keeps track of the time all the files that were changed
      * 
+     *
      * @return array 
      */
     private function getFileModificationTimes()
