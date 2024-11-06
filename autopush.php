@@ -64,7 +64,7 @@ class AutoPush
      */
     public function listen()
     {
-        $this->log($this->style("Listening for changes in directory: {$this->directory}",));
+        $this->log($this->style("Listening for changes in directory: {$this->directory}",self::));
         while (true) {
             sleep($this->interval);
             if (!$this->onChange()) continue;
