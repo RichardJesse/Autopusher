@@ -231,9 +231,9 @@ class AutoPush
      */
     private function log($message)
     {
-      $signature = $this->style("Autopush", self::FG_CYAN, )
+      $signature = $this->style("Autopush", self::FG_CYAN)
 
-        echo "AutoPush: $message \n\n";
+        echo ": $message \n\n";
         return $this;
     }
 }
