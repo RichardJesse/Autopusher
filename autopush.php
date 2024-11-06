@@ -233,7 +233,7 @@ class AutoPush
     {
       $signature = $this->style("Autopush", self::FG_CYAN)
 
-        echo ": $message \n\n";
+        echo "$signature: $message \n\n";
         return $this;
     }
 }
