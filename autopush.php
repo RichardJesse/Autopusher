@@ -64,7 +64,7 @@ class AutoPush
      */
     public function listen()
     {
-        $this->log($this->style("Listening for changes in directory: {$this->directory}", self::BOLD));
+        $this->log($this->style("Listening for changes in directory: {$this->directory}",));
         while (true) {
             sleep($this->interval);
             if (!$this->onChange()) continue;
@@ -231,7 +231,7 @@ class AutoPush
      */
     private function log($message)
     {
-      $signature = $this->style("Autopush", self::FG_CYAN)
+      $signature = $this->style("Autopush", self::FG_CYAN);
 
         echo "$signature: $message \n\n";
         return $this;
