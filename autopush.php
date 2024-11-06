@@ -231,6 +231,8 @@ class AutoPush
      */
     private function log($message)
     {
+      $
+
         echo "AutoPush: $message \n\n";
         return $this;
     }
